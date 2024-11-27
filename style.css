@@ -1,0 +1,332 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family:"Lexend Zetta"
+}
+
+header {
+   background-color: black;
+   color: white;
+   padding: 10px 20px;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+nav .logo {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+}
+
+nav ul li {
+   margin-left: 20px;
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-size: 12px;
+}
+
+.hero {
+   position: relative;
+   text-align: center;
+}
+
+.hero img {
+   width: 100%;
+   height: 93vh;
+   object-fit: cover;
+}
+
+.hero h1 {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
+   font-size: 48px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   font-weight: 300;
+}
+
+.content {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch; 
+   padding: 10px 0px;
+   max-width: auto;
+   gap: 0px; 
+}
+
+hr {
+   border: none; 
+   height: 2px; 
+   background-color: #ddd; 
+   margin: 10px 20px; 
+}
+
+.text-block,
+.image-block {
+   flex: 1;
+   min-width: 300px; 
+   max-width: 1200px;
+}
+
+.image-block img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+   display: flex;
+}
+
+.text-block {
+   padding: 50px;
+   max-width: 400px;
+}
+
+.text-block h2 {
+   font-size: 12px;
+   font-weight: 400;
+   color: gray;
+   margin-bottom: 0px;
+}
+
+.text-block h3 {
+   font-size: 20px;
+   margin-bottom: 20px;
+}
+
+.text-block p {
+   font-size: 12px;
+   line-height: 1.6;
+}
+
+.text-block-full {
+   padding: 50px;
+}
+
+.text-block-full h2 {
+   font-size: 12px;
+   font-weight: 400;
+   color: gray;
+   margin-bottom: 0px;
+}
+
+.text-block-full h3 {
+   font-size: 20px;
+   margin-bottom: 20px;
+}
+
+.text-block-full p {
+   font-size: 12px;
+   line-height: 1.6;
+}
+
+.carousel {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   margin-bottom: 20px; /* Ajout d'un espace entre les deux carrousels */
+}
+
+.carousel-track {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+
+.carousel-image {
+   flex: 1 0 100%; /* Chaque image prend 100% de la largeur visible */
+   height: 100%;
+}
+
+.carousel-image img {
+   width: 100%;
+   height: 70%;
+   object-fit: cover;
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+/* Carrousel 1 */
+#slide1:checked ~ .carousel-track {
+   transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel-track {
+   transform: translateX(-100%);
+}
+
+#slide3:checked ~ .carousel-track {
+   transform: translateX(-200%);
+}
+
+#slide4:checked ~ .carousel-track {
+   transform: translateX(-300%);
+}
+
+/* Carrousel 2 (utilisation de noms d'ID différents pour chaque carrousel) */
+#slide1-2:checked ~ .carousel-track {
+   transform: translateX(0);
+}
+
+#slide2-2:checked ~ .carousel-track {
+   transform: translateX(-100%);
+}
+
+#slide3-2:checked ~ .carousel-track {
+   transform: translateX(-200%);
+}
+
+#slide4-2:checked ~ .carousel-track {
+   transform: translateX(-300%);
+}
+
+.carousel-indicators {
+   position: absolute;
+   bottom: 32%;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   gap: 10px; 
+   width: 97%; 
+   justify-content: space-evenly;
+}
+
+.carousel-indicators label {
+   flex: 1; 
+   height: 5px;
+   background-color: #fff;
+   opacity: 70%;
+   transition: all 0.3s ease;
+}
+
+.carousel-indicators label:hover {
+   opacity: 100%;
+   background-color: #ffffff;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 768px) {
+   .carousel {
+       height: 70vh; 
+   }
+}
+
+
+button {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+   z-index: 10;
+}
+
+button:hover {
+   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bouton {
+   display: inline-block;
+   padding: 10px 20px;
+   background-color: #f39c12; 
+   color: #fff; 
+   text-decoration: none; 
+   border-radius: 1px; 
+   font-weight: bold;
+   transition: background-color 0.3s ease;
+}
+
+.bouton:hover {
+   background-color: #656565;
+   color: #ffff; 
+}
+
+.contact {
+   padding: 20px;
+   background-color: #f5f5f5; 
+   text-align: center;
+   margin: 5%;
+}
+
+.contact h2 {
+   color: #333;
+   margin-bottom: 10px;
+}
+
+.contact p {
+   color: #555;
+   margin-bottom: 20px;
+}
+
+.contact-info {
+   display: grid;
+   gap: 20px; 
+}
+
+.contact-item {
+   background-color: #f39c12;
+   padding: 15px;
+}
+
+.contact-item:hover {
+   transition: background-color 0.5s ease;
+   background-color: #656565;
+   padding: 15px;
+}
+
+.contact-item a {
+   color: #ffffff;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+a {
+   text-align: center;
+   text-decoration: none; 
+   color: #333; 
+   font-weight: thin; 
+   transition: color 0.3s ease; 
+}
+
+a:hover {
+   color: #f39c12; 
+}
+
+
+.footer-content {
+   text-align: center;
+   margin-top: 40px;
+   padding: 30px 50px;
+   background-color: #f7f7f7;
+}
+
+.footer-content p {
+   max-width: 800px;
+   margin-top: auto;
+   font-size: 10px;
+   color: gray;
+   line-height: 1.8;
+}
+
